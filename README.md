@@ -1,7 +1,7 @@
 # BREADTH-FIRST-SEARCH
 <h1>ExpNo 3 : Implement Breadth First Search Traversal of a Graph</h1> 
-<h3>Name:  </h3>vidhyasri 
-<h3>Register Number: </h3>212222230170
+<h3>Name: Vidhyasri  </h3>
+<h3>Register Number: 212222230170 </h3>
 <H3>Aim:</H3>
 <p>To Implement Breadth First Search Traversal of a Graph using Python 3.</p>
 <h3>Theory:</h3>
@@ -70,10 +70,14 @@ Now, Queue becomes empty, So, terminate these process of iteration.
 
 <hr>
 <h3>Program:</h3>
+
 from collections import deque
 
 from collections import defaultdict
-''' V E
+
+
+'''
+V E
 
 FOR EVERY EDGE
 
@@ -83,7 +87,7 @@ U V
 
 A B
 
-A C
+A C 
 
 A F
 
@@ -93,50 +97,52 @@ C F
 
 C D
 
-D E
+D E 
+
 D G
 
 G F
 
 '''
+
 def bfs(graph,start,visited,path):
-```
-queue = deque()
 
-path.append(start)
-
-queue.append(start)
-
-visited[start] = True
-
-while len(queue) != 0:
-
-    tmpnode = queue.popleft()
+    queue = deque()
     
-    for neighbour in graph[tmpnode]:
+    path.append(start)
     
-        if visited[neighbour] == False:
+    queue.append(start)
+    
+    visited[start] = True
+    
+    while len(queue) != 0:
+    
+        tmpnode = queue.popleft()
         
-            path.append(neighbour)
+        for neighbour in graph[tmpnode]:
+        
+            if visited[neighbour] == False:
             
-            queue.append(neighbour)
-            
-            visited[neighbour] = True
-
-return path
+                path.append(neighbour)
+                
+                queue.append(neighbour)
+                
+                visited[neighbour] = True
+    
+    return path
 
 graph = defaultdict(list)
 
 v,e = map(int,input().split())
 
 for i in range(e):
-```
-u,v = map(str,input().split())
 
-graph[u].append(v)
+    u,v = map(str,input().split())
+  
+    graph[u].append(v)
+    
+    graph[v].append(u)
 
-graph[v].append(u)
-```
 start = '0'
 
 path = []
@@ -147,8 +153,7 @@ traversedpath = bfs(graph,start,visited,path)
 
 print(traversedpath)
 
-
-
+<h3>
 <h3>Sample Input</h3>
 <hr>
 7 9 <BR>
